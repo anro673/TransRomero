@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Paleta corporativa TransRomero: negro puro, obsidiana, violetas eléctricos y magentas */
+  --color-obsidian-950: #000000;
+  --color-obsidian-900: #07050E;
+  --color-obsidian-850: #100C1D;
+  --color-obsidian-800: #18122B;
+  --color-brand-violet: #7C3AED;
+  --color-brand-violet-deep: #5B21B6;
+  --color-brand-magenta: #DB2777;
+  --color-brand-magenta-hover: #BE185D;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #000000;
+    color: #F4F4F5;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #000000;
+    color: #F4F4F5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

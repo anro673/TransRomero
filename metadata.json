@@ -1,0 +1,6 @@
+{
+  "name": "MareNostrum Logistics — Comerç Exterior i E-Commerce B2B",
+  "description": "Plataforma web corporativa i catàleg e-commerce B2B per a operacions de transport marítim, càrrega aèria, gestió duanera i comerç internacional.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
