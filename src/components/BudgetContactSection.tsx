@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { AlertCircle, CheckCircle2, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { COMPANY_INFO } from '../data/companyData';
 import { ResilientImage } from './ResilientImage';
 import { useLanguage } from '../context/LanguageContext';
+
+export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mljjvwpk';
 
 export interface BudgetPrefillPayload {
   productId?: string;
@@ -34,7 +36,7 @@ interface FormErrors {
 }
 
 export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ prefill }) => {
-  const { t, products } = useLanguage();
+  const { t, products, language } = useLanguage();
 
   const [form, setForm] = useState<FormState>({
     nombre: '',
@@ -46,6 +48,7 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
     mensaje: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedReceipt, setSubmittedReceipt] = useState<{
     reference: string;
     nombre: string;
@@ -53,6 +56,7 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
     correo: string;
     volumenMensual: string;
     productos: string[];
+    sentToFormspree: boolean;
   } | null>(null);
 
   useEffect(() => {
@@ -115,24 +119,61 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
     return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+
+    setIsSubmitting(true);
 
     const code = `COT-3PL-${Math.floor(1000 + Math.random() * 9000)}`;
     const selectedLabels = products
       .filter((p) => form.productosSeleccionados.includes(p.id))
       .map((p) => `${p.techNumber} (${p.internalRef})`);
 
-    setSubmittedReceipt({
-      reference: code,
-      nombre: form.nombre.trim(),
-      empresa: form.empresa.trim(),
-      correo: form.correo.trim(),
-      volumenMensual: form.volumenMensual,
-      productos:
-        selectedLabels.length > 0 ? selectedLabels : [t.contact.defaultCustomStudy],
-    });
+    let sentSuccessfully = true;
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          nom: form.nombre.trim(),
+          empresa: form.empresa.trim(),
+          email: form.correo.trim(),
+          telefon: form.telefono.trim(),
+          volumMensual: form.volumenMensual,
+          productesSeleccionats:
+            selectedLabels.length > 0 ? selectedLabels.join(' · ') : t.contact.defaultCustomStudy,
+          missatge: form.mensaje.trim(),
+          referencia: code,
+          idioma: language,
+          dataHora: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        sentSuccessfully = false;
+        console.warn('Formspree returned non-200 status:', response.status);
+      }
+    } catch (err) {
+      sentSuccessfully = false;
+      console.warn('Formspree submission error:', err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmittedReceipt({
+        reference: code,
+        nombre: form.nombre.trim(),
+        empresa: form.empresa.trim(),
+        correo: form.correo.trim(),
+        volumenMensual: form.volumenMensual,
+        productos:
+          selectedLabels.length > 0 ? selectedLabels : [t.contact.defaultCustomStudy],
+        sentToFormspree: sentSuccessfully,
+      });
+    }
   };
 
   return (
@@ -257,6 +298,11 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
                       <h2 className="text-xl font-bold">{t.contact.receiptTitle}</h2>
                     </div>
 
+                    <div className="mt-3 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-violet-950/80 border border-fuchsia-500/50 w-fit text-xs text-fuchsia-200">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 shadow-[0_0_8px_#34D399]" />
+                      <span>{t.contact.formspreeNotice} (https://formspree.io/f/mljjvwpk)</span>
+                    </div>
+
                     <p className="mt-3 text-sm text-zinc-300 leading-relaxed">
                       {t.contact.receiptText1}{' '}
                       <span className="font-mono font-semibold text-fuchsia-300 bg-obsidian-900 border border-fuchsia-500/70 px-2 py-0.5 rounded tabular-nums">
@@ -311,7 +357,18 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                  <form
+                    action={FORMSPREE_ENDPOINT}
+                    method="POST"
+                    onSubmit={handleSubmit}
+                    noValidate
+                    className="space-y-5"
+                  >
+                    <input
+                      type="hidden"
+                      name="_subject"
+                      value="Nova sol·licitud de pressupost 3PL - TransRomero"
+                    />
                     <div>
                       <h2 className="text-lg font-bold text-white">
                         {t.contact.formTitle}
@@ -579,10 +636,20 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
                       </p>
                       <button
                         type="submit"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[46px] text-sm font-semibold text-white bg-gradient-to-r from-[#6D28D9] via-[#9333EA] to-[#DB2777] hover:from-[#5B21B6] hover:via-[#7E22CE] hover:to-[#BE185D] rounded-lg transition-all whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-400 shadow-[0_0_18px_rgba(219,39,119,0.3)]"
+                        disabled={isSubmitting}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[46px] text-sm font-semibold text-white bg-gradient-to-r from-[#6D28D9] via-[#9333EA] to-[#DB2777] hover:from-[#5B21B6] hover:via-[#7E22CE] hover:to-[#BE185D] disabled:opacity-75 disabled:cursor-not-allowed rounded-lg transition-all whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-400 shadow-[0_0_18px_rgba(219,39,119,0.3)]"
                       >
-                        <span>{t.contact.submitBtn}</span>
-                        <Send className="w-4 h-4 shrink-0" />
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin shrink-0" />
+                            <span>{t.contact.submittingBtn}</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>{t.contact.submitBtn}</span>
+                            <Send className="w-4 h-4 shrink-0" />
+                          </>
+                        )}
                       </button>
                     </div>
                   </form>

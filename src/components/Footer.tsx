@@ -3,6 +3,7 @@ import { COMPANY_INFO, LegalDocKey } from '../data/companyData';
 import { PageId } from './Navbar';
 import { BrandLogo } from './BrandLogo';
 import { useLanguage } from '../context/LanguageContext';
+import { APP_VERSION } from '../config/version';
 
 interface FooterProps {
   onNavigatePage: (page: PageId) => void;
@@ -11,6 +12,25 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigatePage, onOpenLegal }) => {
   const { t, language, setLanguage, languages } = useLanguage();
+
+  const todayFormatted = new Intl.DateTimeFormat(
+    language === 'ca'
+      ? 'ca-ES'
+      : language === 'en'
+      ? 'en-GB'
+      : language === 'fr'
+      ? 'fr-FR'
+      : language === 'de'
+      ? 'de-DE'
+      : language === 'it'
+      ? 'it-IT'
+      : 'es-ES',
+    {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }
+  ).format(new Date());
 
   return (
     <footer className="bg-[#05030A] text-zinc-300 border-t-2 border-fuchsia-600">
@@ -140,6 +160,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage, onOpenLegal }) =
           <p className="shrink-0 tabular-nums text-zinc-400">
             © {new Date().getFullYear()} {COMPANY_INFO.brandName} · {t.footer.allRightsReserved}
           </p>
+        </div>
+
+        {/* Dynamic Today's Date and App Version Badge requested by user */}
+        <div className="mt-6 pt-6 border-t border-violet-900/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="text-zinc-400">{t.footer.todayDateLabel}</span>
+            <span className="font-semibold text-white bg-obsidian-850 px-2.5 py-1 rounded border border-violet-800/60 tabular-nums">
+              {todayFormatted}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold text-fuchsia-300 bg-fuchsia-950/60 border border-fuchsia-500/50 shadow-[0_0_12px_rgba(219,39,119,0.25)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-400 animate-pulse" />
+              <span>{APP_VERSION}</span>
+            </span>
+          </div>
         </div>
       </div>
     </footer>

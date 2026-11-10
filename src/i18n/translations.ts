@@ -223,6 +223,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       placeholderMessage:
         'Indica tipo de mercancía, peso/dimensiones de palets o cajas, nº de SKUs, necesidad de régimen aduanero ADT/DDA o destinos habituales de envío...',
       submitBtn: 'Solicitar Presupuesto',
+      submittingBtn: 'Enviando a Formspree...',
+      formspreeNotice: 'Formulario conectado con Formspree',
       disclaimer: 'Sin compromiso. Respuesta técnica en menos de 24 h laborables.',
       receiptTitle: 'Solicitud registrada correctamente',
       receiptText1: 'Hemos generado el expediente técnico',
@@ -261,6 +263,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       academicNotice:
         'Plataforma web corporativa de prueba creada en el ámbito formativo de Grado Superior (Transporte, Logística y Comercio Internacional). Los datos societarios, tarifas y enlaces legales son simulados y carecen de validez mercantil.',
       allRightsReserved: 'Todos los derechos reservados.',
+      todayDateLabel: 'Fecha de hoy:',
+      versionLabel: 'Versión',
     },
     legalModal: {
       badge: 'Documentación Legal Ficticia · Proyecto Demostrativo',
@@ -493,6 +497,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       placeholderMessage:
         'Indica tipus de mercaderia, pes/dimensions de palets o caixes, núm. de SKUs, necessitat de règim duaner ADT/DDA o destinacions habituals d’enviament...',
       submitBtn: 'Demanar Pressupost',
+      submittingBtn: 'Enviant a Formspree...',
+      formspreeNotice: 'Formulari connectat amb Formspree',
       disclaimer: 'Sense compromís. Resposta tècnica en menys de 24 h laborables.',
       receiptTitle: 'Sol·licitud registrada correctament',
       receiptText1: 'Hem generat l’expedient tècnic',
@@ -531,6 +537,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       academicNotice:
         'Plataforma web corporativa de prova creada en l’àmbit formatiu de Grau Superior (Transport, Logística i Comerç Internacional). Les dades societàries, tarifes i enllaços legals són simulats i no tenen validesa mercantil.',
       allRightsReserved: 'Tots els drets reservats.',
+      todayDateLabel: "Data d'avui:",
+      versionLabel: 'Versió',
     },
     legalModal: {
       badge: 'Documentació Legal Fictícia · Projecte Demostratiu',
@@ -763,6 +771,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       placeholderMessage:
         'Describe cargo types, pallet/carton dimensions, SKU count, bonded warehouse needs (ADT/DDA), or target delivery regions...',
       submitBtn: 'Request a Quote',
+      submittingBtn: 'Submitting to Formspree...',
+      formspreeNotice: 'Form connected with Formspree',
       disclaimer: 'No obligation. Technical proposal delivered in under 24 business hours.',
       receiptTitle: 'Quotation request submitted successfully',
       receiptText1: 'We have generated technical file',
@@ -801,6 +811,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       academicNotice:
         'Fictional corporate logistics platform built for educational purposes within the Higher Vocational Degree in Transport, Logistics and International Trade. Corporate identity, pricing, and legal links are simulated.',
       allRightsReserved: 'All rights reserved.',
+      todayDateLabel: "Today's date:",
+      versionLabel: 'Version',
     },
     legalModal: {
       badge: 'Fictional Legal Documentation · Educational Simulation',
@@ -1033,6 +1045,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       placeholderMessage:
         'Précisez la nature des produits, dimensions des palettes/cartons, nombre de références SKUs, besoin de douane ADT/DDA ou destinations...',
       submitBtn: 'Demander un Devis',
+      submittingBtn: 'Envoi vers Formspree...',
+      formspreeNotice: 'Formulaire connecté à Formspree',
       disclaimer: 'Sans engagement. Réponse technique sous 24 heures ouvrées.',
       receiptTitle: 'Demande enregistrée avec succès',
       receiptText1: 'Votre dossier technique porte la référence',
@@ -1071,6 +1085,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       academicNotice:
         'Plateforme web d’entreprise créée à des fins pédagogiques dans le cadre du Brevet de Technicien Supérieur en Transport, Logistique et Commerce International. Données et tarifs simulés.',
       allRightsReserved: 'Tous droits réservés.',
+      todayDateLabel: 'Date du jour :',
+      versionLabel: 'Version',
     },
     legalModal: {
       badge: 'Documentation Juridique Simulée · Cadre Pédagogique',
@@ -1303,6 +1319,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       placeholderMessage:
         'Geben Sie Warenart, Paletten-/Kartonmaße, Anzahl der SKUs, Zolllagerbedarf (ADT/DDA) oder Zielregionen an...',
       submitBtn: 'Angebot Anfordern',
+      submittingBtn: 'Wird an Formspree gesendet...',
+      formspreeNotice: 'Formular mit Formspree verbunden',
       disclaimer: 'Unverbindlich. Ausarbeitung innerhalb von 24 Werktagsstunden.',
       receiptTitle: 'Anfrage erfolgreich registriert',
       receiptText1: 'Wir haben den Vorgang angelegt unter der Nummer',
@@ -1341,6 +1359,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       academicNotice:
         'Fiktive Unternehmensplattform, erstellt zu Ausbildungszwecken im Rahmen des staatlichen Studiengangs für Verkehr, Logistik und Außenhandel. Sämtliche Angaben und Tarife sind simuliert.',
       allRightsReserved: 'Alle Rechte vorbehalten.',
+      todayDateLabel: 'Heutiges Datum:',
+      versionLabel: 'Version',
     },
     legalModal: {
       badge: 'Fiktive Rechtsdokumentation · Ausbildungsprojekt',
@@ -1573,6 +1593,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       placeholderMessage:
         'Indica tipo di merce, peso/dimensioni pallet, numero di SKU, necessità di deposito doganale ADT/DDA o destinazioni abituali...',
       submitBtn: 'Richiedi Preventivo',
+      submittingBtn: 'Invio a Formspree...',
+      formspreeNotice: 'Modulo collegato a Formspree',
       disclaimer: 'Senza impegno. Risposta tecnica garantita entro 24 ore lavorative.',
       receiptTitle: 'Richiesta registrata con successo',
       receiptText1: 'Abbiamo creato il fascicolo tecnico numero',
@@ -1611,6 +1633,8 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       academicNotice:
         'Piattaforma web aziendale di prova sviluppata in ambito didattico all’interno del Corso Superiore di Trasporti, Logistica e Commercio Internazionale. Dati societari e tariffe sono simulati.',
       allRightsReserved: 'Tutti i diritti riservati.',
+      todayDateLabel: 'Data di oggi:',
+      versionLabel: 'Versione',
     },
     legalModal: {
       badge: 'Documentazione Legale Fittizia · Simulazione Didattica',

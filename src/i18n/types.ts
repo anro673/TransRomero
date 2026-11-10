@@ -183,6 +183,7 @@ export interface UiTranslations {
     fieldMessage: string;
     placeholderMessage: string;
     submitBtn: string;
+    submittingBtn: string;
     disclaimer: string;
     receiptTitle: string;
     receiptText1: string;
@@ -192,6 +193,7 @@ export interface UiTranslations {
     receiptProducts: string;
     receiptNewMessageBtn: string;
     defaultCustomStudy: string;
+    formspreeNotice: string;
     errors: {
       name: string;
       company: string;
@@ -213,6 +215,8 @@ export interface UiTranslations {
     academicNoticePrefix: string;
     academicNotice: string;
     allRightsReserved: string;
+    todayDateLabel: string;
+    versionLabel: string;
   };
   legalModal: {
     badge: string;
