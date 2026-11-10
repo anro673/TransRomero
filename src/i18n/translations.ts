@@ -209,6 +209,18 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       formTitle: 'Formulario de solicitud de presupuesto y contacto',
       formSubtitle:
         'Selecciona los productos técnicos de tu interés y detalla tu consulta operativa.',
+      tabQuote: 'Solicitud de Presupuesto 3PL',
+      tabContact: 'Formulario de Contacto',
+      quoteFormTitle: 'Solicitud de Presupuesto 3PL (Cotización Express)',
+      quoteFormSubtitle:
+        'Indica el volumen mensual y los productos logísticos requeridos. Se envía directamente a Formspree.',
+      contactFormTitle: 'Formulario de Contacto y Atención al Cliente',
+      contactFormSubtitle:
+        'Escríbenos para cualquier duda o para solicitar una visita a nuestros almacenes en Cataluña.',
+      fieldSubject: 'Asunto / Motivo del contacto *',
+      placeholderSubject: 'Ej. Solicitud de visita a almacén / Consulta de tarifas',
+      submitQuoteBtn: 'Enviar Solicitud de Presupuesto',
+      submitContactBtn: 'Enviar Mensaje de Contacto',
       fieldName: 'Nombre y apellidos *',
       placeholderName: 'Ej. Marta Rovira',
       fieldCompany: 'Empresa o tienda online *',
@@ -483,6 +495,18 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       formTitle: 'Formulari de sol·licitud de pressupost i contacte',
       formSubtitle:
         'Selecciona els productes tècnics del teu interès i detalla la teva consulta operativa.',
+      tabQuote: 'Sol·licitud de Pressupost 3PL',
+      tabContact: 'Formulari de Contacte',
+      quoteFormTitle: 'Sol·licitud de Pressupost 3PL (Cotització Express)',
+      quoteFormSubtitle:
+        'Indica el volum mensual i els productes logístics requerits. S’envia directament a Formspree.',
+      contactFormTitle: 'Formulari de Contacte i Atenció al Client',
+      contactFormSubtitle:
+        'Escriu-nos per a qualsevol dubte o per sol·licitar visita als nostres magatzems de Catalunya.',
+      fieldSubject: 'Assumpte / Motiu del contacte *',
+      placeholderSubject: 'Ex. Sol·licitud de visita a magatzem / Consulta de tarifes',
+      submitQuoteBtn: 'Enviar Sol·licitud de Pressupost',
+      submitContactBtn: 'Enviar Missatge de Contacte',
       fieldName: 'Nom i cognoms *',
       placeholderName: 'Ex. Marta Rovira',
       fieldCompany: 'Empresa o botiga online *',
@@ -757,6 +781,18 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       formTitle: 'Quotation request and contact form',
       formSubtitle:
         'Select the technical logistics products you need and detail your operational requirements.',
+      tabQuote: '3PL Quotation Request',
+      tabContact: 'General Contact Form',
+      quoteFormTitle: '3PL Quotation Request (Express Proposal)',
+      quoteFormSubtitle:
+        'Set your monthly volume and required logistics solutions. Delivered directly to Formspree.',
+      contactFormTitle: 'General Inquiries & Customer Service',
+      contactFormSubtitle:
+        'Reach out to our warehouse engineers or request a site visit to our Barcelona and Tarragona hubs.',
+      fieldSubject: 'Subject / Inquiry Reason *',
+      placeholderSubject: 'e.g. Warehouse visit request / Logistics tariff consultation',
+      submitQuoteBtn: 'Send Quotation Request',
+      submitContactBtn: 'Send Contact Message',
       fieldName: 'Full Name *',
       placeholderName: 'e.g. Marta Rovira',
       fieldCompany: 'Company or Store Name *',
@@ -1031,6 +1067,18 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       formTitle: 'Formulaire de demande de devis et contact',
       formSubtitle:
         'Sélectionnez les prestations logistiques souhaitées et décrivez votre cahier des charges.',
+      tabQuote: 'Demande de Devis 3PL',
+      tabContact: 'Formulaire de Contact',
+      quoteFormTitle: 'Demande de Devis Logistique 3PL (Chiffrage Express)',
+      quoteFormSubtitle:
+        'Indiquez votre volume mensuel et les prestations souhaitées. Envoyé directement à Formspree.',
+      contactFormTitle: 'Formulaire de Contact et Service Client',
+      contactFormSubtitle:
+        'Contactez nos ingénieurs logistiques ou visitez nos entrepôts de Barcelone et Tarragone.',
+      fieldSubject: 'Objet / Motif de votre demande *',
+      placeholderSubject: 'Ex. Visite d’entrepôt / Consultation tarifaire',
+      submitQuoteBtn: 'Envoyer la Demande de Devis',
+      submitContactBtn: 'Envoyer le Message de Contact',
       fieldName: 'Nom et prénom *',
       placeholderName: 'Ex. Marta Rovira',
       fieldCompany: 'Entreprise ou boutique en ligne *',
@@ -1305,6 +1353,18 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       formTitle: 'Anfrageformular für Angebot und Beratung',
       formSubtitle:
         'Wählen Sie die gewünschten Leistungsbausteine aus und beschreiben Sie Ihre Anforderungen.',
+      tabQuote: '3PL-Preisanfrage & Angebot',
+      tabContact: 'Kontaktformular',
+      quoteFormTitle: '3PL-Preisanfrage & Angebot (Express-Kalkulation)',
+      quoteFormSubtitle:
+        'Wählen Sie Sendungsvolumen und gewünschte Bausteine. Wird direkt an Formspree übermittelt.',
+      contactFormTitle: 'Kontaktformular und Kundenservice',
+      contactFormSubtitle:
+        'Schreiben Sie unseren Logistik-Ingenieuren oder vereinbaren Sie eine Besichtigung in Barcelona/Tarragona.',
+      fieldSubject: 'Betreff / Anliegen *',
+      placeholderSubject: 'z.B. Lagerbesichtigung / Tarifberatung',
+      submitQuoteBtn: 'Preisanfrage Absenden',
+      submitContactBtn: 'Kontaktnachricht Absenden',
       fieldName: 'Vor- und Nachname *',
       placeholderName: 'z.B. Marta Rovira',
       fieldCompany: 'Firma oder Onlineshop *',
@@ -1579,6 +1639,18 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       formTitle: 'Modulo di richiesta preventivo e contatto',
       formSubtitle:
         'Seleziona i servizi logistici di tuo interesse e descrivi le tue esigenze operative.',
+      tabQuote: 'Richiesta di Preventivo 3PL',
+      tabContact: 'Modulo di Contatto',
+      quoteFormTitle: 'Richiesta di Preventivo 3PL (Quotazione Express)',
+      quoteFormSubtitle:
+        'Indica il volume mensile e i servizi richiesti. Inviato direttamente a Formspree.',
+      contactFormTitle: 'Modulo di Contatto e Servizio Clienti',
+      contactFormSubtitle:
+        'Contatta i nostri tecnici logistici o richiedi una visita ai nostri magazzini in Catalogna.',
+      fieldSubject: 'Oggetto / Motivo del contatto *',
+      placeholderSubject: 'Es. Visita al magazzino / Consulenza tariffe',
+      submitQuoteBtn: 'Invia Richiesta di Preventivo',
+      submitContactBtn: 'Invia Messaggio di Contatto',
       fieldName: 'Nome e cognome *',
       placeholderName: 'Es. Marta Rovira',
       fieldCompany: 'Azienda o negozio online *',

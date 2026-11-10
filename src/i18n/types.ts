@@ -170,6 +170,16 @@ export interface UiTranslations {
     scheduleLabel: string;
     formTitle: string;
     formSubtitle: string;
+    tabQuote: string;
+    tabContact: string;
+    quoteFormTitle: string;
+    quoteFormSubtitle: string;
+    contactFormTitle: string;
+    contactFormSubtitle: string;
+    fieldSubject: string;
+    placeholderSubject: string;
+    submitQuoteBtn: string;
+    submitContactBtn: string;
     fieldName: string;
     placeholderName: string;
     fieldCompany: string;

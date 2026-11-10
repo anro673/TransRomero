@@ -10,9 +10,14 @@ export type PageId = 'inicio' | 'servicios' | 'quienes-somos' | 'blog' | 'contac
 interface NavbarProps {
   activePage: PageId;
   onNavigatePage: (page: PageId) => void;
+  onOpenQuoteModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  activePage,
+  onNavigatePage,
+  onOpenQuoteModal,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -173,7 +178,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
           {/* Primary CTA */}
           <button
             type="button"
-            onClick={() => handleSelectPage('contacto')}
+            onClick={() => {
+              if (onOpenQuoteModal) {
+                onOpenQuoteModal();
+              } else {
+                handleSelectPage('contacto');
+              }
+            }}
             className="hidden sm:inline-flex items-center justify-center px-4 py-2 min-h-[38px] text-xs font-semibold text-white bg-gradient-to-r from-[#6D28D9] via-[#9333EA] to-[#DB2777] hover:from-[#5B21B6] hover:via-[#7E22CE] hover:to-[#BE185D] rounded-lg transition-all whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-400 shadow-[0_0_15px_rgba(219,39,119,0.3)]"
           >
             {t.nav.requestQuote}
@@ -255,8 +266,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
           <div className="mt-4 pt-4 border-t border-violet-900/50">
             <button
               type="button"
-              onClick={() => handleSelectPage('contacto')}
-              className="w-full min-h-[44px] px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#6D28D9] via-[#9333EA] to-[#DB2777] hover:from-[#5B21B6] hover:via-[#7E22CE] hover:to-[#BE185D] rounded-lg transition-all shadow-[0_0_15px_rgba(219,39,119,0.3)]"
+              onClick={() => {
+                if (onOpenQuoteModal) {
+                  setMobileMenuOpen(false);
+                  onOpenQuoteModal();
+                } else {
+                  handleSelectPage('contacto');
+                }
+              }}
+              className="w-full min-h-[44px] px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#6D28D9] via-[#9333EA] to-[#DB2777] hover:from-[#5B21B6] hover:via-[#7E22CE] hover:to-[#BE185D] rounded-lg transition-all shadow-[0_0_15px_rgba(219,39,119,0.3)] cursor-pointer"
             >
               {t.nav.requestQuote}
             </button>
