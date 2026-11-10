@@ -1,0 +1,12 @@
+# Configuració de desplegament per a Netlify
+# Aquest fitxer assegura que Netlify sàpiga exactament com compilar la web i on es troben els fitxers
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirecció SPA per evitar pantalles en blanc o errors 404 en recarregar la pàgina
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
