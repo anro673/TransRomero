@@ -376,25 +376,6 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
                   </button>
                 </div>
 
-                {/* Formspree Connection Live Indicator Badge */}
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-2 px-3.5 py-2 rounded-lg bg-violet-950/70 border border-fuchsia-500/50 text-xs">
-                  <div className="flex items-center gap-2 text-fuchsia-200">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shrink-0 shadow-[0_0_8px_#34D399] animate-pulse" />
-                    <span className="font-semibold text-white">Formspree Endpoint:</span>
-                    <a
-                      href={FORMSPREE_ENDPOINT}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-mono text-fuchsia-300 hover:text-white underline underline-offset-2 transition-colors"
-                    >
-                      {FORMSPREE_ENDPOINT}
-                    </a>
-                  </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-fuchsia-950/90 text-fuchsia-300 border border-fuchsia-500/40">
-                    {formMode === 'presupuesto' ? 'Cotització Activa' : 'Contacte Actiu'}
-                  </span>
-                </div>
-
                 {submittedReceipt ? (
                   <div className="py-6">
                     <div className="flex items-center gap-2.5 text-white">

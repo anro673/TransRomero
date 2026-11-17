@@ -2,9 +2,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Paleta corporativa TransRomero: negro puro, obsidiana, violetas eléctricos y magentas */
   --color-obsidian-950: #000000;
@@ -26,6 +26,7 @@
   }
 
   body {
+    font-family: var(--font-sans);
     background-color: #000000;
     color: #F4F4F5;
   }
