@@ -5,7 +5,7 @@ import { BrandLogo } from './BrandLogo';
 import { useLanguage } from '../context/LanguageContext';
 import { SupportedLanguage } from '../i18n/types';
 
-export type PageId = 'inicio' | 'servicios' | 'quienes-somos' | 'blog' | 'contacto';
+export type PageId = 'inicio' | 'servicios' | 'quienes-somos' | 'tracking' | 'blog' | 'contacto';
 
 interface NavbarProps {
   activePage: PageId;
@@ -28,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'inicio', label: t.nav.home },
     { id: 'servicios', label: t.nav.services },
     { id: 'quienes-somos', label: t.nav.about },
+    { id: 'tracking', label: t.nav.tracking },
     { id: 'blog', label: t.nav.blog },
     { id: 'contacto', label: t.nav.contact },
   ];
@@ -90,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             return (
               <a
                 key={item.id}
-                href={`#${item.id}`}
+                href={item.id === 'tracking' ? '/tracking' : `#${item.id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   handleSelectPage(item.id);
@@ -121,7 +122,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="inline-flex items-center gap-1.5 px-2.5 py-1.5 h-9 text-xs font-semibold text-zinc-200 bg-obsidian-850 hover:bg-[#1C1236] border border-violet-700/60 hover:border-fuchsia-500/70 rounded-lg transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-400"
             >
               <Globe className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" />
-              <span className="text-sm leading-none">{currentLangOption.flag}</span>
+              <span
+                className={
+                  currentLangOption.code === 'ca' || currentLangOption.code === 'en'
+                    ? 'text-xs font-bold tracking-tight leading-none'
+                    : 'text-sm leading-none'
+                }
+              >
+                {currentLangOption.flag}
+              </span>
               <span className="font-mono text-xs uppercase tracking-wider text-white">
                 {currentLangOption.code}
               </span>
@@ -158,7 +167,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <span className="text-base leading-none">{item.flag}</span>
+                        <span
+                          className={
+                            item.code === 'ca' || item.code === 'en'
+                              ? 'inline-flex items-center justify-center w-[18px] text-xs font-bold tracking-tight leading-none'
+                              : 'text-base leading-none'
+                          }
+                        >
+                          {item.flag}
+                        </span>
                         <span>{item.nativeName}</span>
                       </div>
                       {isSelected ? (
@@ -212,7 +229,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               return (
                 <a
                   key={item.id}
-                  href={`#${item.id}`}
+                  href={item.id === 'tracking' ? '/tracking' : `#${item.id}`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSelectPage(item.id);
@@ -255,7 +272,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                         : 'bg-obsidian-850 text-zinc-300 hover:text-white border border-violet-900/40'
                     }`}
                   >
-                    <span className="text-sm leading-none">{item.flag}</span>
+                    <span
+                      className={
+                        item.code === 'ca' || item.code === 'en'
+                          ? 'text-xs font-bold tracking-tight leading-none'
+                          : 'text-sm leading-none'
+                      }
+                    >
+                      {item.flag}
+                    </span>
                     <span className="truncate">{item.nativeName}</span>
                   </button>
                 );

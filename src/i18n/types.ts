@@ -9,8 +9,8 @@ export interface LanguageOption {
 
 export const SUPPORTED_LANGUAGES: LanguageOption[] = [
   { code: 'es', label: 'Español', nativeName: 'Español', flag: '🇪🇸' },
-  { code: 'ca', label: 'Català', nativeName: 'Català', flag: '🏴󠁥󠁳󠁣󠁴󠁿' },
-  { code: 'en', label: 'English', nativeName: 'English', flag: '🇬🇧' },
+  { code: 'ca', label: 'Català', nativeName: 'Català', flag: 'CA' },
+  { code: 'en', label: 'English', nativeName: 'English', flag: 'EN' },
   { code: 'fr', label: 'Français', nativeName: 'Français', flag: '🇫🇷' },
   { code: 'de', label: 'Deutsch', nativeName: 'Deutsch', flag: '🇩🇪' },
   { code: 'it', label: 'Italiano', nativeName: 'Italiano', flag: '🇮🇹' },
@@ -21,6 +21,7 @@ export interface UiTranslations {
     home: string;
     services: string;
     about: string;
+    tracking: string;
     blog: string;
     contact: string;
     requestQuote: string;

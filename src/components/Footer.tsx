@@ -84,12 +84,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage, onOpenLegal }) =
                 { id: 'inicio' as PageId, label: t.nav.home },
                 { id: 'servicios' as PageId, label: t.nav.services },
                 { id: 'quienes-somos' as PageId, label: t.nav.about },
+                { id: 'tracking' as PageId, label: t.nav.tracking },
                 { id: 'blog' as PageId, label: t.nav.blog },
                 { id: 'contacto' as PageId, label: t.nav.contact },
               ].map((item) => (
                 <li key={item.id}>
                   <a
-                    href={`#${item.id}`}
+                    href={item.id === 'tracking' ? '/tracking' : `#${item.id}`}
                     onClick={(e) => {
                       e.preventDefault();
                       onNavigatePage(item.id);

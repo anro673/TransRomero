@@ -12,16 +12,19 @@ import { AboutPage } from './components/AboutPage';
 import { BlogPage } from './components/BlogPage';
 import { BudgetContactSection, BudgetPrefillPayload } from './components/BudgetContactSection';
 import { QuickQuoteModal, QuickQuotePrefill } from './components/QuickQuoteModal';
+import TrackingPage from './app/tracking/page';
 import { Footer } from './components/Footer';
 import { LegalModal } from './components/LegalModal';
 import { LegalDocKey, LogisticsProduct } from './data/companyData';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
-const VALID_PAGES: PageId[] = ['inicio', 'servicios', 'quienes-somos', 'blog', 'contacto'];
+const VALID_PAGES: PageId[] = ['inicio', 'servicios', 'quienes-somos', 'tracking', 'blog', 'contacto'];
 
 function getPageFromHash(): PageId {
   const raw = window.location.hash.replace('#', '') as PageId;
-  return VALID_PAGES.includes(raw) ? raw : 'inicio';
+  if (VALID_PAGES.includes(raw)) return raw;
+  if (window.location.pathname.replace(/\/+$/, '') === '/tracking') return 'tracking';
+  return 'inicio';
 }
 
 function MainApp() {
@@ -34,17 +37,29 @@ function MainApp() {
   const [quoteModalPrefill, setQuoteModalPrefill] = useState<QuickQuotePrefill | null>(null);
 
   useEffect(() => {
-    const onHashChange = () => {
+    const syncRoute = () => {
       setActivePage(getPageFromHash());
     };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    window.addEventListener('hashchange', syncRoute);
+    window.addEventListener('popstate', syncRoute);
+    return () => {
+      window.removeEventListener('hashchange', syncRoute);
+      window.removeEventListener('popstate', syncRoute);
+    };
   }, []);
 
   const navigateToPage = useCallback((page: PageId, skipScrollTop = false) => {
     setActivePage(page);
-    if (window.location.hash !== `#${page}`) {
-      window.history.pushState(null, '', `#${page}`);
+    if (page === 'tracking') {
+      if (window.location.pathname.replace(/\/+$/, '') !== '/tracking' || window.location.hash) {
+        window.history.pushState(null, '', '/tracking');
+      }
+    } else {
+      const targetHash = page === 'inicio' ? '' : `#${page}`;
+      const targetUrl = page === 'inicio' ? '/' : `/#${page}`;
+      if (window.location.pathname !== '/' || window.location.hash !== targetHash) {
+        window.history.pushState(null, '', targetUrl);
+      }
     }
     if (!skipScrollTop) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -135,6 +150,8 @@ function MainApp() {
         {activePage === 'quienes-somos' && (
           <AboutPage onNavigatePage={(p) => navigateToPage(p)} />
         )}
+
+        {activePage === 'tracking' && <TrackingPage />}
 
         {activePage === 'blog' && <BlogPage />}
 
