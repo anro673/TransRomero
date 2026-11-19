@@ -317,13 +317,34 @@ export const BudgetContactSection: React.FC<BudgetContactSectionProps> = ({ pref
                   <Mail className="w-5 h-5 text-fuchsia-400 shrink-0 mt-0.5" />
                   <div>
                     <dt className="text-xs font-bold text-white">{t.contact.emailLabel}</dt>
-                    <dd className="mt-1 text-sm">
-                      <a
-                        href={`mailto:${COMPANY_INFO.email}`}
-                        className="text-violet-300 font-medium hover:text-fuchsia-400 underline underline-offset-4 transition-colors"
-                      >
-                        {COMPANY_INFO.email}
-                      </a>
+                    <dd className="mt-1.5 space-y-1.5 text-sm">
+                      <div className="flex flex-wrap items-baseline gap-1.5">
+                        <span className="text-xs text-zinc-400">{t.contact.emailGeneralLabel}</span>
+                        <a
+                          href={`mailto:${COMPANY_INFO.emails.general}`}
+                          className="text-violet-300 font-medium hover:text-fuchsia-400 underline underline-offset-4 transition-colors"
+                        >
+                          {COMPANY_INFO.emails.general}
+                        </a>
+                      </div>
+                      <div className="flex flex-wrap items-baseline gap-1.5">
+                        <span className="text-xs text-zinc-400">{t.contact.emailOperationsLabel}</span>
+                        <a
+                          href={`mailto:${COMPANY_INFO.emails.operations}`}
+                          className="text-violet-300 font-medium hover:text-fuchsia-400 underline underline-offset-4 transition-colors"
+                        >
+                          {COMPANY_INFO.emails.operations}
+                        </a>
+                      </div>
+                      <div className="flex flex-wrap items-baseline gap-1.5">
+                        <span className="text-xs text-zinc-400">{t.contact.emailCommercialLabel}</span>
+                        <a
+                          href={`mailto:${COMPANY_INFO.emails.commercial}`}
+                          className="text-violet-300 font-medium hover:text-fuchsia-400 underline underline-offset-4 transition-colors"
+                        >
+                          {COMPANY_INFO.emails.commercial}
+                        </a>
+                      </div>
                     </dd>
                   </div>
                 </div>

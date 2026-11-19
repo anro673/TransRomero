@@ -43,8 +43,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage, onOpenLegal }) =
               <span className="sr-only">{COMPANY_INFO.brandName}</span>
             </div>
 
-            <p className="mt-4 text-sm text-zinc-300 leading-relaxed max-w-md tracking-[0.01em]">
-              {COMPANY_INFO.slogan}. {t.footer.sloganDetail}
+            <p className="mt-4 text-sm font-semibold text-fuchsia-300 tracking-[0.01em]">
+              {t.hero.claim}
+            </p>
+
+            <p className="mt-1.5 text-sm text-zinc-300 leading-relaxed max-w-md tracking-[0.01em]">
+              {t.hero.badgeSlogan}. {t.footer.sloganDetail}
             </p>
 
             <p className="mt-4 text-xs text-fuchsia-400 font-mono tabular-nums">
@@ -117,7 +121,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage, onOpenLegal }) =
                 <strong className="text-violet-400">{t.footer.tarragonaLabel}</strong> {COMPANY_INFO.hubTarragona}
               </p>
               <p className="font-mono tabular-nums pt-1 text-white">
-                {COMPANY_INFO.phoneBarcelona} · {COMPANY_INFO.email}
+                {COMPANY_INFO.phoneBarcelona} ·{' '}
+                <a
+                  href={`mailto:${COMPANY_INFO.emails.general}`}
+                  className="hover:text-fuchsia-400 transition-colors"
+                >
+                  {COMPANY_INFO.emails.general}
+                </a>
+              </p>
+              <p className="font-mono text-[11px] text-zinc-300 space-x-2">
+                <a
+                  href={`mailto:${COMPANY_INFO.emails.operations}`}
+                  className="hover:text-fuchsia-400 transition-colors"
+                >
+                  {COMPANY_INFO.emails.operations}
+                </a>
+                <span className="text-violet-500">·</span>
+                <a
+                  href={`mailto:${COMPANY_INFO.emails.commercial}`}
+                  className="hover:text-fuchsia-400 transition-colors"
+                >
+                  {COMPANY_INFO.emails.commercial}
+                </a>
               </p>
             </div>
 

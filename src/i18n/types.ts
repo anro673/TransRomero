@@ -33,6 +33,7 @@ export interface UiTranslations {
   };
   hero: {
     badgeSlogan: string;
+    claim: string;
     title: string;
     subtitle: string;
     guaranteeTitle: string;
@@ -168,6 +169,9 @@ export interface UiTranslations {
     hubTarragonaLabel: string;
     phonesLabel: string;
     emailLabel: string;
+    emailGeneralLabel: string;
+    emailOperationsLabel: string;
+    emailCommercialLabel: string;
     scheduleLabel: string;
     formTitle: string;
     formSubtitle: string;

@@ -16,7 +16,12 @@ export const COMPANY_INFO = {
   hubTarragona: 'Polígono Industrial Riu Clar, Parcela 28 · 43006 Tarragona',
   phoneBarcelona: '+34 935 18 42 70',
   phoneTarragona: '+34 977 29 64 10',
-  email: 'presupuestos@transromero.es',
+  email: 'info@transromero.cat',
+  emails: {
+    general: 'info@transromero.cat',
+    operations: 'operacions@transromero.cat',
+    commercial: 'comercial@transromero.cat',
+  },
   schedule: 'Lunes a Viernes de 07:30 a 19:30 CET · Cut-off expediciones mismo día: 18:30 h',
   images: {
     logo: '/assets/aistudio/logo_transromero_vm.png',

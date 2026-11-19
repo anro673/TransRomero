@@ -19,6 +19,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
     },
     hero: {
       badgeSlogan: 'Soluciones integrales de almacenaje, fulfillment y distribución 3PL en Cataluña',
+      claim: 'Almacenamiento y distribución ágil para pymes catalanas.',
       title: 'Soluciones logísticas 3PL de almacenaje, picking y distribución para escalar tu negocio',
       subtitle:
         'Gestionamos la recepción de mercancía, custodia paletizada y depósito aduanero (ADT/DDA), preparación de pedidos por radiofrecuencia y transporte 24/48 h para pymes y tiendas online desde Cataluña.',
@@ -205,7 +206,10 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       hubBarcelonaLabel: 'Dirección Física — Centro Barcelona (Sede Central)',
       hubTarragonaLabel: 'Dirección Física — Centro Tarragona (Hub Sur y Aduanas)',
       phonesLabel: 'Teléfonos Directos',
-      emailLabel: 'Correo Corporativo',
+      emailLabel: 'Correos Corporativos',
+      emailGeneralLabel: 'Atención general:',
+      emailOperationsLabel: 'Operaciones y tráfico:',
+      emailCommercialLabel: 'Cotizaciones y ventas:',
       scheduleLabel: 'Horario de Muelles y Oficinas',
       formTitle: 'Formulario de solicitud de presupuesto y contacto',
       formSubtitle:
@@ -306,6 +310,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
     },
     hero: {
       badgeSlogan: 'Solucions integrals d’emmagatzematge, fulfillment i distribució 3PL a Catalunya',
+      claim: 'Emmagatzematge i distribució àgil per a pimes catalanes.',
       title: 'Solucions logístiques 3PL d’emmagatzematge, picking i distribució per escalar el teu negoci',
       subtitle:
         'Gestionem la recepció de mercaderies, custòdia paletitzada i dipòsit duaner (ADT/DDA), preparació de comandes per radiofreqüència i transport 24/48 h per a pimes i botigues online des de Catalunya.',
@@ -492,7 +497,10 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       hubBarcelonaLabel: 'Adreça Física — Centre Barcelona (Seu Central)',
       hubTarragonaLabel: 'Adreça Física — Centre Tarragona (Hub Sud i Duanes)',
       phonesLabel: 'Telèfons Directes',
-      emailLabel: 'Correu Corporatiu',
+      emailLabel: 'Correus Corporatius',
+      emailGeneralLabel: 'Atenció general:',
+      emailOperationsLabel: 'Operacions i tràfic:',
+      emailCommercialLabel: 'Cotitzacions i vendes:',
       scheduleLabel: 'Horari de Molls i Oficines',
       formTitle: 'Formulari de sol·licitud de pressupost i contacte',
       formSubtitle:
@@ -593,6 +601,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
     },
     hero: {
       badgeSlogan: 'Integrated 3PL warehousing, fulfillment, and distribution solutions in Catalonia',
+      claim: 'Agile warehousing and distribution for Catalan SMEs.',
       title: '3PL logistics solutions for warehousing, picking, and distribution to scale your business',
       subtitle:
         'We manage cargo reception, palletized custody, customs bonding (ADT/DDA), RF-guided order fulfillment, and 24/48-hour delivery for SMEs and e-commerce brands from Catalonia.',
@@ -779,7 +788,10 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       hubBarcelonaLabel: 'Physical Facility — Barcelona Central Hub',
       hubTarragonaLabel: 'Physical Facility — Tarragona Hub & Customs Terminal',
       phonesLabel: 'Direct Phone Lines',
-      emailLabel: 'Corporate Email',
+      emailLabel: 'Corporate Emails',
+      emailGeneralLabel: 'General inquiries:',
+      emailOperationsLabel: 'Operations & traffic:',
+      emailCommercialLabel: 'Quotes & sales:',
       scheduleLabel: 'Docks & Operations Schedule',
       formTitle: 'Quotation request and contact form',
       formSubtitle:
@@ -880,6 +892,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
     },
     hero: {
       badgeSlogan: 'Solutions 3PL intégrées de stockage, fulfillment et distribution en Catalogne',
+      claim: 'Stockage et distribution agiles pour les PME catalanes.',
       title: 'Solutions logistiques 3PL d’entreposage, picking et distribution pour développer votre activité',
       subtitle:
         'Nous gérons la réception des marchandises, le stockage sur palettes et le dépôt sous douane (ADT/DDA), la préparation de commandes par radiofréquence et le transport 24/48 h pour les PME et le e-commerce depuis la Catalogne.',
@@ -1066,7 +1079,10 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       hubBarcelonaLabel: 'Plateforme Barcelone (Siège Opérationnel)',
       hubTarragonaLabel: 'Plateforme Tarragone (Hub Sud et Douanes)',
       phonesLabel: 'Lignes Téléphoniques Directes',
-      emailLabel: 'Courriel Professionnel',
+      emailLabel: 'Courriels Professionnels',
+      emailGeneralLabel: 'Accueil général :',
+      emailOperationsLabel: 'Opérations et trafic :',
+      emailCommercialLabel: 'Devis et ventes :',
       scheduleLabel: 'Horaires des Quais et Bureaux',
       formTitle: 'Formulaire de demande de devis et contact',
       formSubtitle:
@@ -1167,6 +1183,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
     },
     hero: {
       badgeSlogan: 'Integrierte 3PL-Lösungen für Lagerung, Fulfillment und Distribution in Katalonien',
+      claim: 'Agiles Lagerwesen und Distribution für katalanische KMU.',
       title: '3PL-Logistiklösungen für Lagerung, Kommissionierung und Versand für Ihr Unternehmenswachstum',
       subtitle:
         'Wir steuern den Wareneingang, die Palettenlagerung und das Zolllager (ADT/DDA), RF-gestützte Kommissionierung und 24/48-Stunden-Transporte für KMU und Onlinehändler ab Katalonien.',
@@ -1353,7 +1370,10 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       hubBarcelonaLabel: 'Standort Barcelona (Zentrale Betriebsleitung)',
       hubTarragonaLabel: 'Standort Tarragona (Süd-Hub & Zollterminal)',
       phonesLabel: 'Direktrufnummern',
-      emailLabel: 'Geschäftliche E-Mail',
+      emailLabel: 'Geschäftliche E-Mails',
+      emailGeneralLabel: 'Allgemeine Anfragen:',
+      emailOperationsLabel: 'Betrieb & Verkehr:',
+      emailCommercialLabel: 'Angebote & Vertrieb:',
       scheduleLabel: 'Betriebs- und Rampenzeiten',
       formTitle: 'Anfrageformular für Angebot und Beratung',
       formSubtitle:
@@ -1454,6 +1474,7 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
     },
     hero: {
       badgeSlogan: 'Soluzioni integrate di stoccaggio, fulfillment e distribuzione 3PL in Catalogna',
+      claim: 'Stoccaggio e distribuzione agili per le PMI catalane.',
       title: 'Soluzioni logistiche 3PL di stoccaggio, picking e distribuzione per far crescere la tua impresa',
       subtitle:
         'Gestiamo il ricevimento merci, la custodia su pallet e il deposito doganale (ADT/DDA), la preparazione ordini in radiofrequenza e il trasporto 24/48 h per PMI ed e-commerce dalla Catalogna.',
@@ -1640,7 +1661,10 @@ export const UI_TRANSLATIONS: Record<SupportedLanguage, UiTranslations> = {
       hubBarcelonaLabel: 'Sede Operativa Barcellona (Hub Centrale)',
       hubTarragonaLabel: 'Sede Operativa Tarragona (Hub Sud e Dogane)',
       phonesLabel: 'Linee Telefoniche Dirette',
-      emailLabel: 'Email Aziendale',
+      emailLabel: 'Email Aziendali',
+      emailGeneralLabel: 'Assistenza generale:',
+      emailOperationsLabel: 'Operazioni e traffico:',
+      emailCommercialLabel: 'Preventivi e vendite:',
       scheduleLabel: 'Orari di Baie e Uffici',
       formTitle: 'Modulo di richiesta preventivo e contatto',
       formSubtitle:

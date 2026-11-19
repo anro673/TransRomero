@@ -30,7 +30,12 @@ export const Hero: React.FC<HeroProps> = ({ onNavigatePage }) => {
               {t.hero.title}
             </h1>
 
-            <p className="mt-5 text-base sm:text-lg text-zinc-300 leading-relaxed max-w-xl tracking-[0.01em]">
+            <p className="mt-4 inline-flex items-center gap-2.5 px-3.5 py-2 rounded-lg bg-violet-950/60 border border-violet-500/40 text-sm sm:text-base font-semibold text-fuchsia-300 w-fit">
+              <span className="w-2 h-2 rounded-full bg-fuchsia-400 shrink-0 shadow-[0_0_8px_#E838C8]" />
+              <span>{t.hero.claim}</span>
+            </p>
+
+            <p className="mt-4 text-base sm:text-lg text-zinc-300 leading-relaxed max-w-xl tracking-[0.01em]">
               {t.hero.subtitle}
             </p>
 
